@@ -9,10 +9,7 @@ const jwt = require('jsonwebtoken')
 const secretKey = 'Qw3$er5ty6&iuh*9'
 mongoose.connect(dbUrl)
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
 
 router.post('/signup',async(req,res)=>{
   try {
@@ -88,7 +85,7 @@ router.post('/sendpasswordlink',async(req,res)=>{
     from:'ajithkumarfsd97@gmail.com',
     to:`${email}`,
     subject:"Sending Email For password Reset",
-    text:`This Link Valid For 30 MINUTES http://localhost:3000/forgotpassword/${user.id}/${setuserToken.token}`
+    text:`This Link Valid For 30 MINUTES https://sensational-dragon-928dcf.netlify.app/forgotpassword/${user.id}/${setuserToken.token}`
 }
 
 transporter.sendMail(mailOptions,(error,info)=>{

@@ -8,9 +8,9 @@ const {hashPassword,hashCompare,createToken,decodeToken,validate,roleAdmin} = re
 mongoose.connect(dbUrl)
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 router.get('/home', async (req, res)=>{
   try {
@@ -81,14 +81,6 @@ router.get('/:url',async function(req, res) {
   
 });
 
-// router.delete('/delete/:id',async(req,res)=>{
-//   try {
-//     let deleteUrl = UrlModel.findByIdAndDelete({_id:req.params.id})
-//     console.log(deleteUrl)
-//   } catch (error) {
-    
-//   }
-// })
 
 function generateUrl() {
   var rndResult = "";
